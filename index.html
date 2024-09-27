@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت کارگاه</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>مدیریت کارگاه</h1>
+
+        <div class="form-section">
+            <h2>اضافه کردن کارگاه</h2>
+            <input type="text" id="workshop-name" placeholder="نام کارگاه">
+            <button onclick="addWorkshop()">اضافه کردن</button>
+        </div>
+
+        <div class="form-section">
+            <h2>اضافه کردن کارگر</h2>
+            <input type="text" id="worker-name" placeholder="نام کارگر">
+            <input type="number" id="daily-salary" placeholder="حقوق روزانه">
+            <button onclick="addWorker()">اضافه کردن</button>
+        </div>
+
+        <div class="form-section">
+            <h2>اضافه کردن رکورد کار</h2>
+            <select id="worker-select">
+                <option value="">انتخاب کارگر</option>
+            </select>
+            <select id="workshop-select">
+                <option value="">انتخاب کارگاه</option>
+            </select>
+            <input type="number" id="days-worked" placeholder="تعداد روز کارکرد">
+            <input type="number" step="0.01" id="bonus-penalty" placeholder="پاداش یا جریمه">
+            <button onclick="addWorkRecord()">اضافه کردن رکورد</button>
+        </div>
+
+        <h2>رکوردها</h2>
+        <div>
+            <input type="text" id="worker-filter" placeholder="جستجو در نام کارگر" oninput="filterRecords()">
+            <input type="text" id="workshop-filter" placeholder="جستجو در نام کارگاه" oninput="filterRecords()">
+        </div>
+        <table id="records-table">
+            <thead>
+                <tr>
+                    <th>نام کارگر</th>
+                    <th>نام کارگاه</th>
+                    <th>دستمزد روزانه</th>
+                    <th>تعداد روز کارکرد</th>
+                    <th>پاداش/جریمه</th>
+                    <th>جمع تعداد روز کارکرد هفته</th>
+                    <th>دستمزد هفته</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
